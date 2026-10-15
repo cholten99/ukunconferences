@@ -1,10 +1,13 @@
 :root {
-  --bg: #f6f7f9;
+  --bg: #e7eaf0;
   --panel: #ffffff;
-  --border: #e3e6eb;
+  --border: #d4d9e1;
   --text: #1f2430;
   --text-muted: #636b78;
   --accent: #2563eb;
+  --ink: #1b2030;
+  --ink-text: #f3f5f8;
+  --ink-muted: #a7aec0;
   --radius: 10px;
   --header-h: 108px;
   --footer-h: 64px;
@@ -24,8 +27,7 @@ body {
 /* ---------- Header ---------- */
 
 .site-header {
-  border-bottom: 1px solid var(--border);
-  background: var(--panel);
+  background: var(--ink);
 }
 
 .site-header__inner {
@@ -39,11 +41,12 @@ body {
   font-size: 1.9rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: var(--ink-text);
 }
 
 .site-tagline {
   margin: 6px 0 0;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   font-size: 1rem;
 }
 
@@ -105,7 +108,7 @@ body {
 }
 
 .pill:hover {
-  background: #f0f2f6;
+  background: #dde2ea;
 }
 
 .pill.is-active {
@@ -123,6 +126,7 @@ body {
   border-radius: var(--radius);
   padding: 32px;
   min-height: 320px;
+  box-shadow: 0 1px 2px rgba(20, 24, 36, 0.04), 0 8px 20px -12px rgba(20, 24, 36, 0.18);
 }
 
 .detail__empty {
@@ -188,8 +192,7 @@ body {
 /* ---------- Footer ---------- */
 
 .site-footer {
-  border-top: 1px solid var(--border);
-  background: var(--panel);
+  background: var(--ink);
 }
 
 .site-footer__inner {
@@ -201,7 +204,7 @@ body {
   align-items: center;
   justify-content: space-between;
   gap: 10px;
-  color: var(--text-muted);
+  color: var(--ink-muted);
   font-size: 0.9rem;
 }
 
@@ -219,13 +222,13 @@ body {
 }
 
 .site-footer__links a {
-  color: var(--text);
+  color: var(--ink-text);
   text-decoration: none;
   font-weight: 600;
 }
 
 .site-footer__links a:hover {
-  color: var(--accent);
+  color: #8ab4ff;
   text-decoration: underline;
 }
 
