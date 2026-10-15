@@ -1,0 +1,242 @@
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --border: #e3e6eb;
+  --text: #1f2430;
+  --text-muted: #636b78;
+  --accent: #2563eb;
+  --radius: 10px;
+  --header-h: 108px;
+  --footer-h: 64px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.site-header__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 32px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.site-tagline {
+  margin: 6px 0 0;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* ---------- Layout ---------- */
+
+.layout {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 28px 32px 48px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+/* ---------- Years / sidebar ---------- */
+
+.years {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: sticky;
+  top: 24px;
+}
+
+.year-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.year-heading {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.year-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  --series-color: var(--accent);
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-left: 4px solid var(--series-color);
+  transition: background 0.12s ease, color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.pill:hover {
+  background: #f0f2f6;
+}
+
+.pill.is-active {
+  background: var(--series-color);
+  border-color: var(--series-color);
+  color: #fff;
+  box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- Detail panel ---------- */
+
+.detail {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  min-height: 320px;
+}
+
+.detail__empty {
+  color: var(--text-muted);
+}
+
+.detail__tag {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--series-color, var(--accent));
+  margin-bottom: 14px;
+}
+
+.detail__title {
+  margin: 0 0 6px;
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.detail__meta {
+  margin: 0 0 18px;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+
+.detail__meta span::before {
+  content: "•";
+  margin-right: 10px;
+  color: var(--border);
+}
+
+.detail__meta span:first-child::before {
+  content: none;
+  margin-right: 0;
+}
+
+.detail__blurb {
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 640px;
+}
+
+.detail__link {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.detail__link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--panel);
+}
+
+.site-footer__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 18px 32px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.site-footer__by {
+  margin: 0;
+}
+
+.site-footer__links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__links a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-footer__links a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .years {
+    position: static;
+  }
+}

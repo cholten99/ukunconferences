@@ -2,27 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>UK Unconferences — Coming Soon</title>
+  <title>UK Unconferences</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="robots" content="noindex" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background: radial-gradient(circle at 50% 30%, #eef2ff 0%, #f4f7e9 45%, #eef6f9 100%);
-    }
-  </style>
+  <meta name="description" content="A year-by-year history of the UK's government and public sector unconferences." />
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body class="min-h-screen flex items-center justify-center p-6 text-slate-700">
+<body>
 
-  <main class="text-center max-w-lg w-full">
-    <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-800">
-      UK Unconferences
-    </h1>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <h1 class="site-title">UK Unconferences</h1>
+      <p class="site-tagline">A year-by-year history of the UK's government &amp; public sector unconferences.</p>
+    </div>
+  </header>
 
-    <p class="mt-4 text-lg leading-relaxed">
-      We'll be back soon.
-    </p>
+  <main class="layout">
+    <nav class="years" id="years" aria-label="Years"></nav>
+    <section class="detail" id="detail" aria-live="polite"></section>
   </main>
 
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__by">Put together by Dave Durant.</p>
+      <ul class="site-footer__links">
+        <li><a href="https://bowsy.co.uk/" target="_blank" rel="noopener">bowsy.co.uk</a></li>
+        <li><a href="https://bsky.app/profile/bowsy.co.uk" target="_blank" rel="noopener">Bluesky</a></li>
+        <li><a href="https://www.linkedin.com/in/davidrdurant/" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="mailto:dave@bowsy.co.uk">Email</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
