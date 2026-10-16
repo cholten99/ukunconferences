@@ -21,6 +21,7 @@ const SERIES = {
   opendatacamp: { name: "Open Data Camp", url: "https://www.odcamp.uk/", color: "#0891b2" },
   librarycamp: { name: "LibraryCamp", url: "http://www.librarycamp.co.uk/", color: "#78716c" },
   ukeducamp: { name: "UKEduCamp", url: "https://www.jisc.ac.uk/get-involved/ukeducamp", color: "#ea580c" },
+  charitycamp: { name: "UKCharityCamp", url: "https://www.ukcharitycamp.com/", color: "#4338ca" },
 };
 
 const EVENTS = [
@@ -62,6 +63,18 @@ const EVENTS = [
     source: "Eventbrite listing",
   },
   {
+    id: "charitycamp2025", series: "charitycamp", year: 2025, date: "November 2025 (exact date unconfirmed)",
+    location: "Birmingham (exact venue unconfirmed)",
+    blurb: "Third running of UKCharityCamp, an unconference for digital practitioners across the UK charity/third sector.",
+    source: "zoonou.com reflections post",
+  },
+  {
+    id: "charitycamp2026", series: "charitycamp", year: 2026, date: "5 Nov 2026",
+    location: "The Studio, Birmingham",
+    blurb: "Unconference run by Neontribe for digital practitioners across the UK charity/third sector, free to attend with travel bursaries available.",
+    source: "ukcharitycamp.com",
+  },
+  {
     id: "scotgovcamp2026", series: "scotgovcamp", year: 2026, date: "21 Sep 2026",
     location: "Edinburgh Futures Institute, Edinburgh",
     blurb: "ScotGovCamp returned to the Edinburgh Futures Institute, continuing its post-pandemic revival.",
@@ -98,6 +111,12 @@ const EVENTS = [
     source: "attendee blog / LocalGovDrupal",
   },
   {
+    id: "charitycamp2024", series: "charitycamp", year: 2024, date: "28 Nov 2024",
+    location: "The Studio, Birmingham",
+    blurb: "Second running of UKCharityCamp, repeated after strong feedback from its first year.",
+    source: "dxw.com",
+  },
+  {
     id: "govcampconnect2024", series: "govcampconnect", year: 2024, date: "24 Sep 2024",
     location: "Narrow Water Castle, Warrenpoint, Co. Down, Northern Ireland",
     blurb: "Community-run unconference deliberately sited between Belfast and Dublin to connect Northern Irish and Irish digital-government practitioners.",
@@ -126,6 +145,12 @@ const EVENTS = [
     location: "Cardiff",
     blurb: "Annual Welsh government unconference.",
     source: "attendee blog (neiltamplin.blog)",
+  },
+  {
+    id: "charitycamp2023", series: "charitycamp", year: 2023, date: "30 Nov 2023",
+    location: "Birmingham",
+    blurb: "The first ever UKCharityCamp, a third-sector unconference focused on digital, following in the tradition of UKGovCamp and earlier events like BarcampNFP and VCSSCamp.",
+    source: "dxw.com",
   },
   {
     id: "localgovcamp2023", series: "localgovcamp", year: 2023, date: "25 Oct 2023",
