@@ -155,6 +155,11 @@ body {
   color: var(--text-muted);
 }
 
+.detail__handle,
+.detail__close {
+  display: none;
+}
+
 .detail__tag {
   display: inline-block;
   padding: 4px 10px;
@@ -261,13 +266,20 @@ body {
   /* The viewport-locked, independently-scrolling two-pane shell works well
      with a mouse and a tall screen, but fighting two separate scroll areas
      on a small touchscreen is miserable. Drop back to one normal,
-     whole-page-scrolling column instead. */
+     whole-page-scrolling column for the year list, and turn the detail
+     panel into a bottom sheet that slides up over it when an unconference
+     is tapped -- avoids making people scroll past 60+ pills to find the
+     detail view every time, and avoids a second competing scroll area. */
   html, body {
     height: auto;
   }
 
   body {
     display: block;
+  }
+
+  body.sheet-open {
+    overflow: hidden;
   }
 
   .layout {
@@ -279,10 +291,68 @@ body {
   .years {
     overflow: visible;
     padding-right: 0;
-    margin-bottom: 28px;
+    margin-bottom: 0;
   }
 
   .detail {
-    overflow: visible;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    max-height: 82vh;
+    overflow-y: auto;
+    margin: 0;
+    border-radius: 16px 16px 0 0;
+    box-shadow: 0 -10px 30px -8px rgba(15, 18, 28, 0.4);
+    transform: translateY(100%);
+    transition: transform 0.28s ease;
+    z-index: 50;
+  }
+
+  .detail.is-open {
+    transform: translateY(0);
+  }
+
+  .detail-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 18, 28, 0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s ease;
+    z-index: 45;
+  }
+
+  .detail-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .detail__handle {
+    display: block;
+    width: 36px;
+    height: 4px;
+    border-radius: 999px;
+    background: var(--border);
+    margin: 0 auto 16px;
+  }
+
+  .detail__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1;
+    cursor: pointer;
   }
 }

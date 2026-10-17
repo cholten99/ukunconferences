@@ -1,6 +1,28 @@
 (function () {
   const yearsEl = document.getElementById("years");
   const detailEl = document.getElementById("detail");
+  const backdropEl = document.getElementById("detail-backdrop");
+
+  function isMobile() {
+    return window.matchMedia("(max-width: 760px)").matches;
+  }
+
+  function openSheet() {
+    detailEl.classList.add("is-open");
+    backdropEl.classList.add("is-open");
+    document.body.classList.add("sheet-open");
+  }
+
+  function closeSheet() {
+    detailEl.classList.remove("is-open");
+    backdropEl.classList.remove("is-open");
+    document.body.classList.remove("sheet-open");
+  }
+
+  backdropEl.addEventListener("click", closeSheet);
+  detailEl.addEventListener("click", (e) => {
+    if (e.target.closest(".detail__close")) closeSheet();
+  });
 
   const byYearDesc = [...EVENTS].sort((a, b) => b.year - a.year);
   const years = [...new Set(byYearDesc.map((e) => e.year))];
@@ -41,7 +63,10 @@
         pill.dataset.id = event.id;
         pill.style.setProperty("--series-color", series.color);
         pill.textContent = label;
-        pill.addEventListener("click", () => selectEvent(event.id));
+        pill.addEventListener("click", () => {
+          selectEvent(event.id);
+          if (isMobile()) openSheet();
+        });
         row.appendChild(pill);
       });
 
@@ -58,6 +83,8 @@
 
     const series = SERIES[event.series];
     detailEl.innerHTML = `
+      <div class="detail__handle"></div>
+      <button type="button" class="detail__close" aria-label="Close">✕</button>
       <span class="detail__tag" style="--series-color: ${series.color}">${series.name}</span>
       <h2 class="detail__title">${series.name} ${event.year}</h2>
       <p class="detail__meta">
@@ -75,6 +102,7 @@
       pill.classList.toggle("is-active", pill.dataset.id === id);
     });
     renderDetail(EVENTS.find((e) => e.id === id));
+    detailEl.scrollTop = 0;
   }
 
   renderYears();
