@@ -301,8 +301,24 @@ body {
   font-size: 0.9rem;
 }
 
-.site-footer__by {
+.site-footer__about {
+  flex: 1 1 420px;
+  max-width: 640px;
+}
+
+.site-footer__by,
+.site-footer__note {
   margin: 0;
+}
+
+.site-footer__note {
+  margin-top: 4px;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.site-footer__note a {
+  color: var(--ink-text);
 }
 
 .site-footer__links {
