@@ -75,6 +75,32 @@
     });
   }
 
+  function esc(str) {
+    return String(str).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  function renderSessions(event) {
+    if (!event.sessions) return "";
+    const total = event.sessions.reduce((n, s) => n + s.items.length, 0);
+    const slots = event.sessions.map((slot) => `
+      <div class="sessions__slot">
+        <h4 class="sessions__slot-head">${esc(slot.slot)} <span>${esc(slot.time)}</span></h4>
+        <ul class="sessions__list">
+          ${slot.items.map((s) => `
+            <li>
+              <span class="sessions__title">${esc(s.title)}</span>
+              <span class="sessions__meta">${s.by ? esc(s.by) + " · " : ""}${esc(event.rooms[s.room])}</span>
+            </li>`).join("")}
+        </ul>
+      </div>`).join("");
+    return `
+      <section class="sessions">
+        <h3 class="sessions__head">Sessions <span>(${total})</span></h3>
+        ${slots}
+        ${event.sessionGrid ? `<a class="sessions__source" href="${esc(event.sessionGrid)}" target="_blank" rel="noopener">Original session grid, with session notes ↗</a>` : ""}
+      </section>`;
+  }
+
   function renderDetail(event) {
     if (!event) {
       detailEl.innerHTML = '<p class="detail__empty">Select an unconference on the left to see more about it.</p>';
@@ -94,6 +120,7 @@
       </p>
       <p class="detail__blurb">${event.blurb}</p>
       <a class="detail__link" href="${series.url}" target="_blank" rel="noopener">Visit ${series.name} ↗</a>
+      ${renderSessions(event)}
     `;
   }
 

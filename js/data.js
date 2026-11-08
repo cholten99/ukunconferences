@@ -22,6 +22,7 @@ const SERIES = {
   librarycamp: { name: "LibraryCamp", url: "http://www.librarycamp.co.uk/", color: "#78716c" },
   ukeducamp: { name: "UKEduCamp", url: "https://www.jisc.ac.uk/get-involved/ukeducamp", color: "#ea580c" },
   charitycamp: { name: "UKCharityCamp", url: "https://www.ukcharitycamp.com/", color: "#4338ca" },
+  delivercon: { name: "DeliverCon", url: "https://delivercon.uk/", color: "#c026d3" },
 };
 
 const EVENTS = [
@@ -49,6 +50,53 @@ const EVENTS = [
     location: "University of Edinburgh Business School, Edinburgh",
     blurb: "Open Data Camp 10, the UK's volunteer-led open data unconference.",
     source: "odcamp.uk",
+  },
+  {
+    id: "govcampcymru2026", series: "govcampcymru", year: 2026, date: "6 Nov 2026",
+    location: "Welsh Government, Cathays Park, Cardiff",
+    blurb: "Annual Welsh government unconference: 29 sessions across seven rooms, pitched and run by attendees on the day.",
+    source: "govcamp.cymru; session grid from the event's Notion page (pitchers' names kept only in the private archive)",
+    sessionGrid: "https://app.notion.com/p/Session-Grid-29da25994fd080c5a2c9dd34cf0a52d2",
+    rooms: ["Caerdydd 1&2", "Harlech", "Caerdydd 3", "Ty Ddewi", "Pen y Bont", "Abertawe", "Tregaron"],
+    sessions: [
+      { slot: "Session 1", time: "11:00–11:45", items: [
+        { room: 0, title: "Bilingual from the start: beyond the words" },
+        { room: 0, title: "Why are services not developed bilingually?" },
+        { room: 1, title: "Digital transformation: who gets left behind?" },
+        { room: 2, title: "How do we (should we) measure government performance?" },
+        { room: 3, title: "Can AI help break the cycle of legacy systems?" },
+        { room: 4, title: "Building a culture of data use in local government" },
+        { room: 5, title: "How do we meaningfully tackle inefficiency where we work?" },
+        { room: 6, title: "Reversing the decline of open source in government" },
+      ]},
+      { slot: "Session 2", time: "11:55–12:40", items: [
+        { room: 0, title: "AI is changing how people interact with public services. Are we ready?" },
+        { room: 1, title: "Let's talk about racism in the workplace" },
+        { room: 2, title: "Fediverse first: accessible and open social media by default for all Welsh government comms" },
+        { room: 3, title: "Two languages, one channel: podcasting in two languages" },
+        { room: 4, title: "AI in a safe, sustainable way" },
+        { room: 5, title: "Shadow AI amnesty: an honest discussion about what AI we use at work" },
+        { room: 6, title: "Building communities that make change" },
+      ]},
+      { slot: "Session 3", time: "14:05–14:50", items: [
+        { room: 0, title: "What is blocking UCD and digital people from doing their best work?" },
+        { room: 1, title: "Does the term 'hard to reach' push people away?" },
+        { room: 2, title: "Relational conversation with Basis" },
+        { room: 3, title: "Why is it so hard to demonstrate the impact of our work, and what could we do about it?" },
+        { room: 4, title: "Digital health: sharing experience of looking after your physical and mental health" },
+        { room: 5, title: "Digital safety, public trust and accountability" },
+        { room: 6, title: "How do we balance digital with in-person engagement?" },
+      ]},
+      { slot: "Session 4", time: "15:20–16:05", items: [
+        { room: 0, title: "Your most embarrassing failure" },
+        { room: 1, title: "General networking" },
+        { room: 2, title: "Turning lived experience into influence" },
+        { room: 3, title: "What will future generations thank us for getting right about AI in 20 years' time?" },
+        { room: 4, title: "Who is responsible for improving public services? The digital team, innovation, continuous improvement, someone else?" },
+        { room: 5, title: "UCD + AI + Cyber = ???" },
+        { room: 6, title: "Why isn't the archive sexy? Getting publishers to care about their past data, and preparing the archive for AI" },
+      ]},
+    ],
   },
   {
     id: "govcampcymru2025", series: "govcampcymru", year: 2025, date: "7 Nov 2025",
@@ -430,5 +478,75 @@ const EVENTS = [
     location: "Google HQ, London",
     blurb: "The first ever UKGovCamp, then known as Barcamp UKGovWeb. 105 attendees, 35 sessions.",
     source: "ukgovcamp.com",
+  },
+
+  // ---------- DeliverCon ----------
+  // Dates and cities from delivercon.uk/events (its own descriptions have
+  // copy-paste date slips; the headings were taken as authoritative).
+  {
+    id: "delivercon2026b", series: "delivercon", year: 2026, date: "6 Nov 2026",
+    location: "Defra, Aqua House, 20 Lionel St, Birmingham",
+    blurb: "The eleventh DeliverCon, the unconference for delivery managers in and around the public sector, back in Birmingham where it started.",
+    source: "delivercon.uk",
+  },
+  {
+    id: "delivercon2026", series: "delivercon", year: 2026, date: "22 May 2026",
+    location: "York (exact venue unconfirmed)",
+    blurb: "Spring DeliverCon for public sector delivery managers, returning to York.",
+    source: "delivercon.uk/events",
+  },
+  {
+    id: "delivercon2025b", series: "delivercon", year: 2025, date: "10 Oct 2025",
+    location: "Stratford, London (exact venue unconfirmed)",
+    blurb: "DeliverCon 2025.2, the second delivery management unconference of the year.",
+    source: "delivercon.uk/events",
+  },
+  {
+    id: "delivercon2025", series: "delivercon", year: 2025, date: "21 May 2025",
+    location: "York (exact venue unconfirmed)", attendees: "~200 expected",
+    blurb: "Delivery management unconference, part-funded by a UKGovCamp grant.",
+    source: "delivercon.uk/events; ukgovcamp.com grant post",
+  },
+  {
+    id: "delivercon2024b", series: "delivercon", year: 2024, date: "7 Nov 2024",
+    location: "London (exact venue unconfirmed)",
+    blurb: "DeliverCon 2024.2, the first year with two editions.",
+    source: "delivercon.uk/events; dxw.com write-up",
+  },
+  {
+    id: "delivercon2024", series: "delivercon", year: 2024, date: "18 Apr 2024",
+    location: "Cardiff (exact venue unconfirmed)",
+    blurb: "Delivery management unconference run like UKGovCamp, with lightning talks over lunch. Part-funded by a UKGovCamp grant.",
+    source: "delivercon.uk/events; ukgovcamp.com grant post",
+  },
+  {
+    id: "delivercon2023", series: "delivercon", year: 2023, date: "22 Feb 2023",
+    location: "Birmingham (exact venue unconfirmed)",
+    blurb: "Delivery management unconference for the public sector.",
+    source: "delivercon.uk/events",
+  },
+  {
+    id: "delivercon2022", series: "delivercon", year: 2022, date: "11 May 2022",
+    location: "London and online",
+    blurb: "Hybrid return of the delivery management unconference.",
+    source: "delivercon.uk/events",
+  },
+  {
+    id: "delivercon2021", series: "delivercon", year: 2021, date: "28 Apr 2021",
+    location: "Online",
+    blurb: "Virtual DeliverCon during the pandemic.",
+    source: "delivercon.uk/events",
+  },
+  {
+    id: "delivercon2020", series: "delivercon", year: 2020, date: "26 Feb 2020",
+    location: "Discovery Museum, Newcastle upon Tyne", attendees: "100+ delivery managers",
+    blurb: "The second DeliverCon, held just before the pandemic.",
+    source: "digitalpeople.blog.gov.uk",
+  },
+  {
+    id: "delivercon2018", series: "delivercon", year: 2018, date: "11 Oct 2018",
+    location: "Priory Rooms, Birmingham",
+    blurb: "The first DeliverCon, billed as the first unconference for delivery managers across government.",
+    source: "delivercon.uk/events; Ian Ames on Medium",
   },
 ];
