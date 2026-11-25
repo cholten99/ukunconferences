@@ -1,0 +1,92 @@
+{
+  "ukgovcamp": {
+    "name": "UKGovCamp",
+    "slug": "ukgovcamp",
+    "url": "https://www.ukgovcamp.com/",
+    "color": "#2563eb"
+  },
+  "oneteamgov": {
+    "name": "OneTeamGov",
+    "slug": "oneteamgov",
+    "url": "https://www.oneteamgov.uk/",
+    "color": "#059669"
+  },
+  "oneteamgovglobal": {
+    "name": "OneTeamGovGlobal",
+    "slug": "oneteamgovglobal",
+    "url": "https://www.oneteamgov.uk/",
+    "color": "#0d9488"
+  },
+  "policycamp": {
+    "name": "Policy Camp",
+    "slug": "policy-camp",
+    "url": "https://policycamp.org.uk/",
+    "color": "#7c3aed"
+  },
+  "localgovcamp": {
+    "name": "LocalGovCamp",
+    "slug": "localgovcamp",
+    "url": "https://localgov.digital/events/localgovcamp/",
+    "color": "#d97706"
+  },
+  "govcampcymru": {
+    "name": "GovCamp Cymru",
+    "slug": "govcamp-cymru",
+    "url": "https://www.govcamp.cymru/",
+    "color": "#dc2626"
+  },
+  "scotgovcamp": {
+    "name": "ScotGovCamp",
+    "slug": "scotgovcamp",
+    "url": "https://www.govcamp.scot/",
+    "color": "#0ea5e9"
+  },
+  "govcampnorth": {
+    "name": "GovCamp North",
+    "slug": "govcamp-north",
+    "url": "https://govcampnorth.co.uk/",
+    "color": "#ca8a04"
+  },
+  "govcampconnect": {
+    "name": "GovCampConnect",
+    "slug": "govcampconnect",
+    "url": "https://govcampconnect.org/",
+    "color": "#4d7c0f"
+  },
+  "ukhealthcamp": {
+    "name": "UK Health Camp",
+    "slug": "uk-health-camp",
+    "url": "https://ukhealthcamp.com/",
+    "color": "#be185d"
+  },
+  "opendatacamp": {
+    "name": "Open Data Camp",
+    "slug": "open-data-camp",
+    "url": "https://www.odcamp.uk/",
+    "color": "#0891b2"
+  },
+  "librarycamp": {
+    "name": "LibraryCamp",
+    "slug": "librarycamp",
+    "url": "http://www.librarycamp.co.uk/",
+    "color": "#78716c"
+  },
+  "ukeducamp": {
+    "name": "UKEduCamp",
+    "slug": "ukeducamp",
+    "url": "https://www.jisc.ac.uk/get-involved/ukeducamp",
+    "color": "#ea580c"
+  },
+  "charitycamp": {
+    "name": "UKCharityCamp",
+    "slug": "ukcharitycamp",
+    "url": "https://www.ukcharitycamp.com/",
+    "color": "#4338ca"
+  },
+  "delivercon": {
+    "name": "DeliverCon",
+    "slug": "delivercon",
+    "url": "https://delivercon.uk/",
+    "color": "#c026d3"
+  }
+}

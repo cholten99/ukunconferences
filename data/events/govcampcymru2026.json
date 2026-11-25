@@ -1,0 +1,170 @@
+{
+  "id": "govcampcymru2026",
+  "series": "govcampcymru",
+  "path": "govcamp-cymru/2026",
+  "year": 2026,
+  "order": 50,
+  "date": "6 Nov 2026",
+  "location": "Welsh Government, Cathays Park, Cardiff",
+  "blurb": "Annual Welsh government unconference: 29 sessions across seven rooms, pitched and run by attendees on the day.",
+  "source": "govcamp.cymru; session grid from the event's Notion page (pitchers' names kept only in the private archive)",
+  "sessionGrid": "https://app.notion.com/p/Session-Grid-29da25994fd080c5a2c9dd34cf0a52d2",
+  "rooms": [
+    "Caerdydd 1&2",
+    "Harlech",
+    "Caerdydd 3",
+    "Ty Ddewi",
+    "Pen y Bont",
+    "Abertawe",
+    "Tregaron"
+  ],
+  "sessions": [
+    {
+      "slot": "Session 1",
+      "time": "11:00–11:45",
+      "items": [
+        {
+          "room": 0,
+          "title": "Bilingual from the start: beyond the words"
+        },
+        {
+          "room": 0,
+          "title": "Why are services not developed bilingually?"
+        },
+        {
+          "room": 1,
+          "title": "Digital transformation: who gets left behind?"
+        },
+        {
+          "room": 2,
+          "title": "How do we (should we) measure government performance?"
+        },
+        {
+          "room": 3,
+          "title": "Can AI help break the cycle of legacy systems?"
+        },
+        {
+          "room": 4,
+          "title": "Building a culture of data use in local government"
+        },
+        {
+          "room": 5,
+          "title": "How do we meaningfully tackle inefficiency where we work?"
+        },
+        {
+          "room": 6,
+          "title": "Reversing the decline of open source in government"
+        }
+      ]
+    },
+    {
+      "slot": "Session 2",
+      "time": "11:55–12:40",
+      "items": [
+        {
+          "room": 0,
+          "title": "AI is changing how people interact with public services. Are we ready?"
+        },
+        {
+          "room": 1,
+          "title": "Let's talk about racism in the workplace"
+        },
+        {
+          "room": 2,
+          "title": "Fediverse first: accessible and open social media by default for all Welsh government comms"
+        },
+        {
+          "room": 3,
+          "title": "Two languages, one channel: podcasting in two languages"
+        },
+        {
+          "room": 4,
+          "title": "AI in a safe, sustainable way"
+        },
+        {
+          "room": 5,
+          "title": "Shadow AI amnesty: an honest discussion about what AI we use at work"
+        },
+        {
+          "room": 6,
+          "title": "Building communities that make change"
+        }
+      ]
+    },
+    {
+      "slot": "Session 3",
+      "time": "14:05–14:50",
+      "items": [
+        {
+          "room": 0,
+          "title": "What is blocking UCD and digital people from doing their best work?"
+        },
+        {
+          "room": 1,
+          "title": "Does the term 'hard to reach' push people away?"
+        },
+        {
+          "room": 2,
+          "title": "Relational conversation with Basis"
+        },
+        {
+          "room": 3,
+          "title": "Why is it so hard to demonstrate the impact of our work, and what could we do about it?"
+        },
+        {
+          "room": 4,
+          "title": "Digital health: sharing experience of looking after your physical and mental health"
+        },
+        {
+          "room": 5,
+          "title": "Digital safety, public trust and accountability"
+        },
+        {
+          "room": 6,
+          "title": "How do we balance digital with in-person engagement?"
+        }
+      ]
+    },
+    {
+      "slot": "Session 4",
+      "time": "15:20–16:05",
+      "items": [
+        {
+          "room": 0,
+          "title": "Your most embarrassing failure"
+        },
+        {
+          "room": 1,
+          "title": "General networking"
+        },
+        {
+          "room": 2,
+          "title": "Turning lived experience into influence"
+        },
+        {
+          "room": 3,
+          "title": "What will future generations thank us for getting right about AI in 20 years' time?"
+        },
+        {
+          "room": 4,
+          "title": "Who is responsible for improving public services? The digital team, innovation, continuous improvement, someone else?"
+        },
+        {
+          "room": 5,
+          "title": "UCD + AI + Cyber = ???"
+        },
+        {
+          "room": 6,
+          "title": "Why isn't the archive sexy? Getting publishers to care about their past data, and preparing the archive for AI"
+        }
+      ]
+    }
+  ],
+  "notes": [
+    {
+      "title": "Session notes, linked from the session grid",
+      "publisher": "GovCamp Cymru",
+      "url": "https://app.notion.com/p/Session-Grid-29da25994fd080c5a2c9dd34cf0a52d2"
+    }
+  ]
+}

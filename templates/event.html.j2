@@ -1,0 +1,93 @@
+{% extends "_base.html.j2" %}
+{% block title %}{{ e.title }} - UK Unconferences{% endblock %}
+{% block description %}{{ e.title }}, {{ e.date }}, {{ e.location }}. {{ e.blurb }}{% endblock %}
+
+{% macro link_section(id, heading, items) %}
+{% if items %}
+      <section class="sessions" id="{{ id }}">
+        <h2 class="sessions__head">{{ heading }}</h2>
+        <ul class="sessions__list">
+          {% for i in items %}
+          <li>
+            <a class="detail__link" href="{{ i.url }}" target="_blank" rel="noopener">{{ i.title }} ↗</a>
+            {% if i.publisher or i.date %}<span class="sessions__meta">{{ [i.publisher, i.date] | select | join(" · ") }}</span>{% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+{% endif %}
+{% endmacro %}
+
+{% block main %}
+  <main class="event">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/">All unconferences</a> <span>›</span> <a href="/{{ s.slug }}/">{{ s.name }}</a> <span>›</span> <span aria-current="page">{{ e.short_title }}</span>
+    </nav>
+    <article class="event__panel">
+      <a class="detail__tag" style="--series-color: {{ s.color }}" href="/{{ s.slug }}/">{{ s.name }}</a>
+      <h1 class="detail__title">{{ e.title }}</h1>
+      <p class="detail__meta">
+        <span>{{ e.date }}</span>
+        <span>{{ e.location }}</span>
+        {% if e.attendees %}<span>{{ e.attendees }}</span>{% endif %}
+      </p>
+      <p class="detail__blurb">{{ e.blurb }}</p>
+      <a class="detail__link" href="{{ e.website or s.url }}" target="_blank" rel="noopener">Visit {{ s.name }} ↗</a>
+
+{% if e.committee %}
+      <section class="sessions" id="committee">
+        <h2 class="sessions__head">Committee</h2>
+        <ul class="sessions__list">
+          {% for c in e.committee %}
+          <li>
+            <span class="sessions__title">{{ c.name }}</span>
+            <span class="sessions__meta">{% if c.role %}{{ c.role }} · {% endif %}<a href="{{ c.source }}" target="_blank" rel="noopener">source ↗</a></span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+{% endif %}
+
+{{ link_section("sponsors", "Sponsors", e.sponsors) }}
+
+{% if e.sessions %}
+      <section class="sessions" id="sessions">
+        <h2 class="sessions__head">Sessions <span>({{ e.session_count }})</span></h2>
+        {% for slot in e.sessions %}
+        <div class="sessions__slot">
+          <h3 class="sessions__slot-head">{{ slot.slot }} <span>{{ slot.time }}</span></h3>
+          <ul class="sessions__list">
+            {% for i in slot['items'] %}
+            <li>
+              <span class="sessions__title">{{ i.title }}</span>
+              <span class="sessions__meta">{{ e.rooms[i.room] }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        {% endfor %}
+      </section>
+{% endif %}
+{% if e.sessionGrid %}
+      <a class="sessions__source" href="{{ e.sessionGrid }}" target="_blank" rel="noopener">Original session grid ↗</a>
+{% endif %}
+
+{{ link_section("notes", "Notes taken", e.notes) }}
+{{ link_section("write-ups", "Write-ups", e.writeups) }}
+{{ link_section("photos", "Photos and video", e.media) }}
+{{ link_section("links", "Other links", e.links) }}
+
+{% if e.missing %}
+      <aside class="event__missing">
+        <strong>Can you help fill the gaps?</strong> Nothing here yet on: {{ e.missing | join(", ") }}.
+        <a href="mailto:dave@bowsy.co.uk?subject={{ e.title | urlencode }}">Email me</a> if you have something to add.
+      </aside>
+{% endif %}
+    </article>
+
+    <nav class="event__nav" aria-label="Other {{ s.name }} events">
+      {% if prev %}<a href="/{{ prev.path }}/">← {{ prev.title }}</a>{% else %}<span></span>{% endif %}
+      {% if next %}<a href="/{{ next.path }}/">{{ next.title }} →</a>{% endif %}
+    </nav>
+  </main>
+{% endblock %}

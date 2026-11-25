@@ -97,7 +97,22 @@
       <section class="sessions">
         <h3 class="sessions__head">Sessions <span>(${total})</span></h3>
         ${slots}
-        ${event.sessionGrid ? `<a class="sessions__source" href="${esc(event.sessionGrid)}" target="_blank" rel="noopener">Original session grid, with session notes ↗</a>` : ""}
+        ${event.sessionGrid ? `<a class="sessions__source" href="${esc(event.sessionGrid)}" target="_blank" rel="noopener">Original session grid ↗</a>` : ""}
+      </section>`;
+  }
+
+  function renderWriteups(event) {
+    if (!event.writeups) return "";
+    return `
+      <section class="sessions">
+        <h3 class="sessions__head">Write-ups</h3>
+        <ul class="sessions__list">
+          ${event.writeups.map((w) => `
+            <li>
+              <a class="detail__link" href="${esc(w.url)}" target="_blank" rel="noopener">${esc(w.title)} ↗</a>
+              <span class="sessions__meta">${esc(w.publisher)}</span>
+            </li>`).join("")}
+        </ul>
       </section>`;
   }
 
@@ -119,7 +134,9 @@
         ${event.attendees ? `<span>${event.attendees}</span>` : ""}
       </p>
       <p class="detail__blurb">${event.blurb}</p>
+      <a class="detail__link" href="/${esc(event.path)}/">Full page for this event →</a><br>
       <a class="detail__link" href="${series.url}" target="_blank" rel="noopener">Visit ${series.name} ↗</a>
+      ${renderWriteups(event)}
       ${renderSessions(event)}
     `;
   }

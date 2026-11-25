@@ -1,0 +1,25 @@
+{
+  "id": "charitycamp2026",
+  "series": "charitycamp",
+  "path": "ukcharitycamp/2026",
+  "year": 2026,
+  "order": 90,
+  "date": "5 Nov 2026",
+  "location": "The Studio, Birmingham",
+  "blurb": "Unconference run by Neontribe for digital practitioners across the UK charity/third sector, free to attend with travel bursaries available.",
+  "source": "ukcharitycamp.com",
+  "writeups": [
+    {
+      "title": "The output is not the outcome: notes from UKCharityCamp",
+      "publisher": "dxw",
+      "date": "9 Nov 2026",
+      "url": "https://www.dxw.com/2026/11/the-output-is-not-the-outcome-notes-from-ukcharitycamp/"
+    },
+    {
+      "title": "UKCharityCamp 26: what we talked about, and why it matters",
+      "publisher": "dxw",
+      "url": "https://www.dxw.com/2026/11/ukcharitycamp-26-what-we-talked-about-and-why-it-matters/",
+      "date": "23 Nov 2026"
+    }
+  ]
+}

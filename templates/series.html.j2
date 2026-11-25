@@ -1,0 +1,23 @@
+{% extends "_base.html.j2" %}
+{% block title %}{{ s.name }} - UK Unconferences{% endblock %}
+{% block description %}Every {{ s.name }} event we know about.{% endblock %}
+{% block main %}
+  <main class="event">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All unconferences</a> <span>›</span> <span aria-current="page">{{ s.name }}</span></nav>
+    <article class="event__panel">
+      <h1 class="detail__title">{{ s.name }}</h1>
+      <a class="detail__link" href="{{ s.url }}" target="_blank" rel="noopener">Visit {{ s.name }} ↗</a>
+      <section class="sessions">
+        <h2 class="sessions__head">Events <span>({{ events | length }})</span></h2>
+        <ul class="sessions__list">
+          {% for e in events %}
+          <li>
+            <a class="detail__link" href="/{{ e.path }}/">{{ e.title }}</a>
+            <span class="sessions__meta">{{ e.date }} · {{ e.location }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+      </section>
+    </article>
+  </main>
+{% endblock %}

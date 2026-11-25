@@ -1,0 +1,15 @@
+{% extends "_base.html.j2" %}
+{% block body_class %}home{% endblock %}
+{% block masthead %}<h1 class="site-title">UK Unconferences</h1>{% endblock %}
+{% block main %}
+  <main class="layout">
+    <nav class="years" id="years" aria-label="Years"></nav>
+    <section class="detail" id="detail" aria-live="polite"></section>
+  </main>
+
+  <div class="detail-backdrop" id="detail-backdrop"></div>
+{% endblock %}
+{% block scripts %}
+  <script src="/js/data.js?v={{ ver }}"></script>
+  <script src="/js/app.js?v={{ ver }}"></script>
+{% endblock %}
